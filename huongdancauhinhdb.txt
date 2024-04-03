@@ -1,0 +1,21 @@
+1,Đăng nhập vào tài quản system rồi chạy lần lượt các lệnh sau
+create user C##MYUSER identified by root;
+GRANT CREATE SESSION TO C##MYUSER;
+ALTER USER C##MYUSER DEFAULT TABLESPACE USERS;
+GRANT UNLIMITED TABLESPACE TO C##MYUSER;
+GRANT create table, create procedure,create SEQUENCE,create TRIGGER to C##MYUSER
+2,import data từ file export.sql
+3,
+create user C##MYUSER2 identified by root;
+GRANT CREATE SESSION TO C##MYUSER2;
+GRANT select,insert,update on C##MYUSER."passport" to C##MYUSER2;
+GRANT select on "resident" to C##MYUSER.C##MYUSER2;
+GRANT select on "admin" to C##MYUSER.C##MYUSER2;
+	
+Các tài khoản admin
+xacthuc/123456
+giamsat/123456
+luutru/123456
+xetduyet/123456
+link đăng nhập
+localhost/quanlyhochieu/login
